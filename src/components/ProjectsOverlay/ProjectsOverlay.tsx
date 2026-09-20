@@ -105,7 +105,7 @@ export function ProjectsOverlay({ isOpen, onClose }: ProjectsOverlayProps) {
                 src="/assets/FolderBackground_red.svg"
                 alt=""
                 fill
-                style={{ objectFit: "cover", objectPosition: "top" }}
+                style={{ objectFit: "fill" }}
                 priority
               />
             </div>

@@ -89,7 +89,7 @@ export default function CategoryOverlay({ isOpen, data, onClose }: CategoryOverl
                 alt=""
                 aria-hidden
                 fill
-                style={{ objectFit: "cover", objectPosition: "top" }}
+                style={{ objectFit: "fill" }}
                 priority
               />
             </div>

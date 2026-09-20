@@ -102,7 +102,7 @@ export function ExperienceOverlay({ isOpen, onClose }: ExperienceOverlayProps) {
                 src="/assets/FolderBackground_yellow.svg"
                 alt=""
                 fill
-                style={{ objectFit: "cover", objectPosition: "top" }}
+                style={{ objectFit: "fill" }}
                 priority
               />
             </div>

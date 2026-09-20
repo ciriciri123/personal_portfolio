@@ -105,7 +105,7 @@ export function ResearchOverlay({ isOpen, onClose }: ResearchOverlayProps) {
                 src="/assets/FolderBackground_green.svg"
                 alt=""
                 fill
-                style={{ objectFit: "cover", objectPosition: "top" }}
+                style={{ objectFit: "fill" }}
                 priority
               />
             </div>

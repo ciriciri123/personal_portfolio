@@ -105,7 +105,7 @@ export function CertificatesOverlay({ isOpen, onClose }: CertificatesOverlayProp
                 src="/assets/FolderBackground_purple.svg"
                 alt=""
                 fill
-                style={{ objectFit: "cover", objectPosition: "top" }}
+                style={{ objectFit: "fill" }}
                 priority
               />
             </div>
