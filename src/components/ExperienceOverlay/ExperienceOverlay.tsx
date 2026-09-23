@@ -20,7 +20,7 @@ const CATEGORIES: { label: string; value: "leadership" | "work" }[] = [
 export function ExperienceOverlay({ isOpen, onClose }: ExperienceOverlayProps) {
   const shouldReduce = useReducedMotion();
   const closeButtonRef = useRef<HTMLButtonElement>(null);
-  
+
   const [selectedFilter, setSelectedFilter] = useState<"leadership" | "work">("work");
   const [activeExperience, setActiveExperience] = useState<ExperienceItem | null>(null);
 
@@ -96,13 +96,23 @@ export function ExperienceOverlay({ isOpen, onClose }: ExperienceOverlayProps) {
                 : { type: "spring", stiffness: 280, damping: 30, mass: 0.8 }
             }
           >
-            {/* Background SVG */}
-            <div className="absolute inset-0 z-0">
+            {/* Background SVG — mobile (iPhone) */}
+            <div className="absolute inset-0 z-0 md:hidden">
+              <Image
+                src="/assets/FolderBackground_yellow_iphone.svg"
+                alt=""
+                fill
+                style={{ objectFit: "cover", objectPosition: "top center" }}
+                priority
+              />
+            </div>
+            {/* Background SVG — desktop */}
+            <div className="absolute inset-0 z-0 hidden md:block">
               <Image
                 src="/assets/FolderBackground_yellow.svg"
                 alt=""
                 fill
-                style={{ objectFit: "fill" }}
+                style={{ objectFit: "cover", objectPosition: "top center" }}
                 priority
               />
             </div>
@@ -113,16 +123,13 @@ export function ExperienceOverlay({ isOpen, onClose }: ExperienceOverlayProps) {
                 <div>
                   <h2
                     id="experience-overlay-title"
-                    className="font-inter font-bold text-white leading-none drop-shadow-sm ml-1 uppercase"
-                    style={{ fontSize: "clamp(40px, 5vw, 64px)" }}
+                    className="font-inter font-bold text-white leading-none drop-shadow-sm ml-1 capitalize"
+                    style={{ fontSize: "clamp(25px, 5vw, 64px)" }}
                   >
-                    EXPERIENCE
+                    Experience
                   </h2>
-                  <p className="text-white/80 font-inter font-medium mt-2 ml-2 text-sm sm:text-base tracking-wide max-w-sm sm:max-w-md md:max-w-xl pr-4">
-                    Applying skills and taking responsibility in real environments.
-                  </p>
                 </div>
-                
+
                 <button
                   ref={closeButtonRef}
                   onClick={onClose}
@@ -144,7 +151,7 @@ export function ExperienceOverlay({ isOpen, onClose }: ExperienceOverlayProps) {
               {/* Filters */}
               <AnimatePresence>
                 {!activeExperience && (
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
@@ -154,11 +161,10 @@ export function ExperienceOverlay({ isOpen, onClose }: ExperienceOverlayProps) {
                       <button
                         key={cat.value}
                         onClick={() => setSelectedFilter(cat.value as "leadership" | "work")}
-                        className={`shrink-0 px-4 py-2 rounded-full font-inter text-sm font-semibold transition-all border outline-none focus-visible:ring-2 focus-visible:ring-white/50 tracking-wider ${
-                          selectedFilter === cat.value
+                        className={`shrink-0 px-4 py-2 rounded-full font-inter text-sm font-semibold transition-all border outline-none focus-visible:ring-2 focus-visible:ring-white/50 tracking-wider ${selectedFilter === cat.value
                             ? "bg-[#E7B603] text-white border-transparent shadow-md"
                             : "bg-white/10 text-white/80 border-white/20 hover:bg-white/20 hover:text-white"
-                        }`}
+                          }`}
                       >
                         {cat.label}
                       </button>
@@ -169,16 +175,16 @@ export function ExperienceOverlay({ isOpen, onClose }: ExperienceOverlayProps) {
             </header>
 
             {/* Scrollable Content */}
-            <div 
+            <div
               className="relative z-10 mx-6 mb-6 flex-1 overflow-hidden rounded-[24px] border border-black/5 shadow-inner bg-[#F8F9FA]"
             >
               <div className="h-full overflow-y-auto px-6 py-8 md:px-10 md:py-12">
                 <AnimatePresence mode="wait">
                   {activeExperience ? (
-                    <ExperienceDetail 
-                      key="detail" 
-                      experience={activeExperience} 
-                      onBack={() => setActiveExperience(null)} 
+                    <ExperienceDetail
+                      key="detail"
+                      experience={activeExperience}
+                      onBack={() => setActiveExperience(null)}
                     />
                   ) : (
                     <motion.div
@@ -188,8 +194,8 @@ export function ExperienceOverlay({ isOpen, onClose }: ExperienceOverlayProps) {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <ExperienceTimeline 
-                        experiences={filteredExperiences} 
+                      <ExperienceTimeline
+                        experiences={filteredExperiences}
                         onExperienceClick={setActiveExperience}
                         groupByOrg={selectedFilter === "leadership"}
                       />

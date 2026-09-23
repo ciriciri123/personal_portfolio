@@ -99,13 +99,23 @@ export function CertificatesOverlay({ isOpen, onClose }: CertificatesOverlayProp
                 : { type: "spring", stiffness: 280, damping: 30, mass: 0.8 }
             }
           >
-            {/* Background SVG */}
-            <div className="absolute inset-0 z-0">
+            {/* Background SVG — mobile (iPhone) */}
+            <div className="absolute inset-0 z-0 md:hidden">
+              <Image
+                src="/assets/FolderBackground_purple_iphone.svg"
+                alt=""
+                fill
+                style={{ objectFit: "cover", objectPosition: "top center" }}
+                priority
+              />
+            </div>
+            {/* Background SVG — desktop */}
+            <div className="absolute inset-0 z-0 hidden md:block">
               <Image
                 src="/assets/FolderBackground_purple.svg"
                 alt=""
                 fill
-                style={{ objectFit: "fill" }}
+                style={{ objectFit: "cover", objectPosition: "top center" }}
                 priority
               />
             </div>
@@ -116,14 +126,11 @@ export function CertificatesOverlay({ isOpen, onClose }: CertificatesOverlayProp
                 <div>
                   <h2
                     id="certificates-overlay-title"
-                    className="font-inter font-bold text-white leading-none drop-shadow-sm ml-1 uppercase"
-                    style={{ fontSize: "clamp(40px, 5vw, 64px)" }}
+                    className="font-inter font-bold text-white leading-none drop-shadow-sm ml-1 capitalize"
+                    style={{ fontSize: "clamp(25px, 5vw, 64px)" }}
                   >
-                    CERTIFICATE
+                    Certificate
                   </h2>
-                  <p className="text-white/80 font-inter font-medium mt-2 ml-2 text-sm sm:text-base tracking-wide">
-                    A collection of qualifications, learning, and recognition.
-                  </p>
                 </div>
                 
                 <button
