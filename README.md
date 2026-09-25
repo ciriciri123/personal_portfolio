@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Portfolio
+
+A personal portfolio built to feel less like a website and more like opening a desktop folder on someone's computer.
+
+This project showcases my work across **AI, software engineering, research, leadership, and design** through an interactive folder-based interface. It was also my first project built entirely through **vibe coding**.
+
+## Overview
+
+Instead of a traditional portfolio layout, I wanted an experience that felt playful while still being structured. Each folder represents a part of my journey:
+
+* 📁 Projects
+* 📁 Research
+* 📁 Experience
+* 📁 Certificates
+
+Opening a folder reveals detailed pages, media, links, and documentation, similar to browsing files on a desktop.
+
+## Features
+
+* Folder-inspired navigation with animated interactions.
+* Dedicated overlays for Projects, Research, Experience, and Certificates.
+* Rich project pages with images, videos, reports, and GitHub links.
+* About Me popover with a custom scroll interaction.
+* Responsive desktop and mobile experience.
+* Accessible animations with reduced-motion support.
+* Portfolio content managed through structured TypeScript data files.
+
+## My Role
+
+This is an **individual project** where I was responsible for the entire product:
+
+* Designed the overall concept and user experience.
+* Developed the complete frontend in **Next.js + React + TypeScript**.
+* Built reusable overlay and folder components.
+* Organized all portfolio content into a scalable data-driven architecture.
+* Designed and refined the interaction system through iterative AI-assisted development.
+
+## Tech Stack
+
+* **Next.js 16**
+* **React 19**
+* **TypeScript**
+* **Tailwind CSS 4**
+* **Motion**
+* **ESLint**
+
+## What I Learned: Building My Own Vibe Coding System
+
+The biggest outcome of this project wasn't just the website—it was learning **how I personally use AI to build software**.
+
+Over the course of this project, I developed a workflow for vibe coding:
+
+1. **Design the experience first.** Break the interface into interactions and components before writing code.
+2. **Build iteratively with AI.** Generate one feature at a time, review the implementation, and refine it through multiple feedback loops.
+3. **Keep architecture separate from content.** Components stay reusable while portfolio content lives in dedicated data files.
+
+This project taught me that effective vibe coding is less about prompting once, and more about building a structured collaboration process with AI.
+
+## Project Structure
+
+```text
+src/
+├── app/                 # Next.js app entry and global styles
+├── components/          # Folder cards, overlays, navigation, About Me, etc.
+└── data/                # Projects, research, experience, certificates, and profile content
+
+public/
+└── assets/              # Images, videos, certificates, fonts, and portfolio media
+```
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000` to view the portfolio locally.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Author
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Riccy Riandy Intan**
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Computer Science (Artificial Intelligence) student at Bina Nusantara University, interested in machine learning, software engineering, research, and building technology that solves real-world problems.
